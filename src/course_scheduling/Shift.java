@@ -11,26 +11,27 @@ package course_scheduling;
  * @author Ihda Husnayain
  */
 public class Shift {
-    //private Date tanggal;
-    //private int[] slot = new int[nRuangan];
-    public int idShift;
+   
+    private Jadwal jadwal;
+    private int shift;
     
-   /* public void addShift(Jadwal jadwal){
-        //mengisi status shift dari 0 menjadi 1
+    public Shift(int shift){
+        this.shift = shift;
     }
-    public void replaceSlot(int id, Jadwal jadwal){
-        
+
+    public Jadwal getJadwal() {
+        return jadwal;
     }
-    
-    public void deleteSlot(int nSlot){
-        
+
+    public void setJadwal(Jadwal jadwal) {
+        this.jadwal = jadwal;
     }
-    */
-    public void setIdShift(int idShift){
-        this.idShift = idShift;
+
+    public int getShift() {
+        return shift;
     }
-    public int getIdShift(){
-        return idShift; 
-    }
-    
+
+    public void setShift(int shift) {
+        this.shift = shift;
+    }   
 }

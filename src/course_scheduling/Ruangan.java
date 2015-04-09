@@ -39,8 +39,8 @@ public class Ruangan {
         return kuotaRuangan;
     }
     
-    public void setIsiShiftRuangan(SlotJadwal slotjadwal, Shift shift, int idShift){
-        slotJadwal.setShift(shift,idShift);
+    public void setIsiShiftRuangan(int idSlot, Shift shift, int idShift){
+        
     }
 
     public String getSlotJadwal() {  //menampilkan keseluruhan slot jadwal di ruangan tersebut

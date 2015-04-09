@@ -3,63 +3,66 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package course_scheduling;
-
-import java.util.Date;
 
 /**
  *
  * @author Ihda Husnayain
  */
 public class SlotJadwal {
-    private Date tanggal;
-    private int[] shift = new int[8];
-    private int nShift = 0; //jumlah shift terisi dalam 1 slot jadwal
-    
-    public SlotJadwal(Date tanggal){
-        this.tanggal = tanggal;
-        for(int i=0; i<=8; i++){
-            shift[i] = -1;
-            i++;
-        }
-    }
-    
-    public void setShift(int idShift){   //memanggil method setIdShift pda Shift, menginputkan id dan menambah jumlah shift terisi
-        if(nShift<6){
-            shift[idShift] = idShift;
-            nShift=+1;
-        }
-        else{
-            System.out.println("Shift sudah penuh");
-        }
-        
-    }
-    
-    public int getShift(){  //mengeluarkan nilai idShift
-        return nShift;
-    }   
-   
-    public void setTanggal(Date tanggal) {
-        this.tanggal = tanggal;
+
+    private String hari;
+    private int nShift = 6; //jumlah shift dalam 1 slot
+    private Shift[] shift = null;
+
+    public SlotJadwal(String hari) {
+        this.hari = hari;
+        initShift();
     }
 
-    public Date getTanggal() {
-        return tanggal;
+    public void initShift(){
+        shift = new Shift[nShift];
+        for(int i = 0; i < nShift; i++){
+            shift[i] = new Shift(i);
+        }
+    }
+    
+    public void setShift(int key, Jadwal jadwal) {
+        //memanggil method setIdShift pda Shift, menginputkan id dan menambah jumlah shift terisi
+        key--;
+        if (key < nShift) {
+            // key untuk lebih fleksibel menaruh di shift ke berapa
+            shift[key].setJadwal(jadwal);
+        } else {
+            System.out.println("Tidak bisa lebih dari 6 shift");
+        }
+
+    }
+
+    public Shift getShift(int key) {
+        // Mengembalikan object shift
+        // Apabila memanggil method ini jangan lupa untuk mengecek kondisi null 
+        // jika null muncul pesan belum terisi
+        return shift[key];
+    }
+
+    public String getHari() {
+        return hari;
+    }
+
+    public void setHari(String hari) {
+        this.hari = hari;
     }
 
     @Override
-    public String toString() { //menampilkan shift terisi pada slot di tanggal tersebut
-        System.out.println("Shift terisi pada slot jadwal ini");
-        String out = null;
-        for(int i=0; i<=nShift; i++) {
-            out = "tanggal  "+ getTanggal() + " Shift " + getShift() +" ";
-            i++;
+    public String toString() {
+        //menampilkan shift terisi pada slot di tanggal tersebut
+        String out = "=== Hari" + hari + " === \n";
+        for (int i = 0; i < nShift; i++) {
+            if (shift[i].getJadwal() != null) {
+                out += "Shift " + i + " : " + shift[i].getJadwal().getMatakuliah().getNamaMK() + "\n";
+            }
         }
         return out;
-        
     }
 }
-
-    
-
