@@ -41,9 +41,7 @@ public class Jadwal {
         this.ruangan = ruangan;
     }
 
-    public void setShift(int shift) {
-        this.shift = shift; //yang nnti ditaro di array shift slotJadwal
-    }
+   
 
     public Kelas getKelas() {
         return kelas;
@@ -61,9 +59,7 @@ public class Jadwal {
         return ruangan;
     }
 
-    public int getShift() {
-        return shift; //buat manggil jadwal ini ada di shift keberapa dan di slotJadwal yang mana
-    }
+    
     
     
 }
