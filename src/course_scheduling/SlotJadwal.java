@@ -12,10 +12,10 @@ package course_scheduling;
 public class SlotJadwal {
 
     private String hari;
-    private int nShift = 6; //jumlah shift dalam 1 slot
+    private final int nShift = 6; //jumlah shift dalam 1 slot
     private Shift[] shift = null;
 
-    public SlotJadwal(String hari) {
+    public SlotJadwal(String hari) throws UnsupportedOperationException{
         this.hari = hari;
         initShift();
     }
@@ -63,6 +63,7 @@ public class SlotJadwal {
                 out += "Shift " + i + " : " + shift[i].getJadwal().getMatakuliah().getNamaMK() + "\n";
             }
         }
+        out += "\n";
         return out;
     }
 }

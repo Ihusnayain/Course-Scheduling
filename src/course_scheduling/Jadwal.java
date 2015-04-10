@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package course_scheduling;
 
 /**
@@ -11,18 +10,16 @@ package course_scheduling;
  * @author Ihda Husnayain
  */
 public class Jadwal {
+
     private Kelas kelas;
     private MataKuliah matakuliah;
     private Dosen dosen;
-    private Ruangan ruangan;
     private int shift;
 
-    public Jadwal(Kelas kelas, MataKuliah matakuliah, Dosen dosen, Ruangan ruangan) {
+    public Jadwal(Kelas kelas, MataKuliah matakuliah, Dosen dosen) {
         this.kelas = kelas;
         this.matakuliah = matakuliah;
         this.dosen = dosen;
-        this.ruangan = ruangan;
-       
     }
 
     public void setKelas(Kelas kelas) {
@@ -37,12 +34,6 @@ public class Jadwal {
         this.dosen = dosen;
     }
 
-    public void setRuangan(Ruangan ruangan) {
-        this.ruangan = ruangan;
-    }
-
-   
-
     public Kelas getKelas() {
         return kelas;
     }
@@ -55,11 +46,4 @@ public class Jadwal {
         return dosen;
     }
 
-    public Ruangan getRuangan() {
-        return ruangan;
-    }
-
-    
-    
-    
 }

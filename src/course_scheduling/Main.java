@@ -28,19 +28,12 @@ public class Main {
         Ruangan a101 = new Ruangan("A101", 50);
         Ruangan e301 = new Ruangan("E301", 120);
         
-        Jadwal j1 = new Jadwal(if08, dap, fsv, a101);
-        Jadwal j2 = new Jadwal(if02, pbo, knr, e301);
+        Jadwal j1 = new Jadwal(if08, dap, fsv);
+        Jadwal j2 = new Jadwal(if02, pbo, knr);
         
-        SlotJadwal senin = new SlotJadwal("Senin");
-        SlotJadwal selasa = new SlotJadwal("Selasa");
-        
-        senin.setShift(1, j1);
-        senin.setShift(2, j2);
-        selasa.setShift(1, j2);
-        selasa.setShift(2, j1);
-        
-        System.out.println(senin.toString());
-        System.out.println(selasa.toString());
+        a101.setSlotJadwal(1, 1, j1);
+        a101.setSlotJadwal(1, 2, j2);
+        System.out.println(a101.toString());
     }
     
 }
