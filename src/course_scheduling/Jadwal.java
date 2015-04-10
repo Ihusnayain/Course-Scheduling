@@ -14,7 +14,6 @@ public class Jadwal {
     private Kelas kelas;
     private MataKuliah matakuliah;
     private Dosen dosen;
-    private int shift;
 
     public Jadwal(Kelas kelas, MataKuliah matakuliah, Dosen dosen) {
         this.kelas = kelas;
