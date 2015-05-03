@@ -34,6 +34,8 @@ public class Main {
         a101.setSlotJadwal(1, 1, j1);
         a101.setSlotJadwal(1, 2, j2);
         System.out.println(a101.toString());
+        
+        new JadwalGUI("List Jadwal", 400, 600).showFrame();
     }
     
 }
