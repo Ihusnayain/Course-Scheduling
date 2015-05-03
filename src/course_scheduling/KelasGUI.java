@@ -37,15 +37,15 @@ public class KelasGUI extends GUI {
         super(frameTitle, height, width);
     }
 
-    public void showFrame() {
-        initComponent();
+    public void showMainFrame() {
+        initMainView();
         mainPanel.add(toolsPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel, BorderLayout.CENTER);
         platform.add(mainPanel);
         super.setVisible(true);
     }
 
-    public void initComponent() {
+    public void initMainView() {
         btnBack = new JButton("Kembali");
         mainPanel = new JPanel(new BorderLayout());
         toolsPanel = new JPanel(new GridLayout(1, 5));
