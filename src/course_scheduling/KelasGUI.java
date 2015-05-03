@@ -6,14 +6,11 @@
 package course_scheduling;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -37,7 +34,7 @@ public class KelasGUI extends GUI {
         super(frameTitle, height, width);
     }
 
-    public void showMainFrame() {
+    public void showMainView() {
         initMainView();
         mainPanel.add(toolsPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel, BorderLayout.CENTER);

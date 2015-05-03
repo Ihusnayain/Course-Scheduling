@@ -1,12 +1,8 @@
 package course_scheduling;
 
-import java.awt.Color;
-import java.awt.event.KeyEvent;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
@@ -19,7 +15,7 @@ public class GUI extends JFrame {
 
     private String frameTitle;
     private int height, width;
-    protected JPanel platform, toolsPanel;
+    protected JPanel platform;
     private JTable dataTable;
     private JButton btnAdd, btnEdit, btnDelete, btnSave, btnReset;
 

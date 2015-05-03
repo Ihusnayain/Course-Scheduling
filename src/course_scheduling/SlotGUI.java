@@ -1,41 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package course_scheduling;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
  * @author alpha
  */
-public class MatakuliahGUI extends GUI {
+public class SlotGUI extends GUI {
 
     private JPanel mainPanel, toolsPanel;
     private JButton btnBack;
     private JScrollPane tablePanel;
+    private Ruangan ruang;
+    private JTable dataTable;
 
-    public MatakuliahGUI() {
+    public SlotGUI() {
         super();
+        ruang = new Ruangan("", 0);
     }
 
-    public MatakuliahGUI(String frameTitle) {
+    public SlotGUI(String frameTitle) {
         super(frameTitle);
+        ruang = new Ruangan("", 0);
     }
 
-    public MatakuliahGUI(String frameTitle, int height, int width) {
+    public SlotGUI(String frameTitle, int height, int width) {
         super(frameTitle, height, width);
+        ruang = new Ruangan("", 0);
+    }
+
+    public void setRuangan(Ruangan ruang) {
+        this.ruang = ruang;
+    }
+
+    public Ruangan getRuangan() {
+        return ruang;
     }
 
     public void showMainView() {
         initMainView();
+        mainPanel.add(new JLabel("Shift Ruangan " + ruang.getNamaRuangan()));
         mainPanel.add(toolsPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel, BorderLayout.CENTER);
         platform.add(mainPanel);
@@ -43,9 +54,9 @@ public class MatakuliahGUI extends GUI {
     }
 
     public void initMainView() {
-        mainPanel = new JPanel(new BorderLayout());
         btnBack = new JButton("Kembali");
         toolsPanel = new JPanel(new GridLayout(1, 5));
+        mainPanel = new JPanel(new BorderLayout());
         this.initButtonCRUD();
         toolsPanel.add(this.getBtnAdd());
         toolsPanel.add(this.getBtnEdit());
@@ -53,11 +64,11 @@ public class MatakuliahGUI extends GUI {
         toolsPanel.add(Box.createHorizontalStrut(10));
         toolsPanel.add(btnBack);
         this.setPadding(toolsPanel, 0, 0, 5, 0);
-        
-        String[] column = {"#", "Kode Matakuliah", "Nama Matakuliah"};
+
+        String[] column = {"Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"};
         Object[][] row = {};
-        this.setDataTable(row, column);
-        tablePanel = new JScrollPane(this.getDataTable());
+        dataTable = new JTable(row, column);
+        tablePanel = new JScrollPane(dataTable);
     }
 
 }

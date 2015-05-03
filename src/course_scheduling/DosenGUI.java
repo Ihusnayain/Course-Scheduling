@@ -30,7 +30,7 @@ public class DosenGUI extends GUI {
     }
 
     @SuppressWarnings("empty-statement")
-    public void showMainFrame() {
+    public void showMainView() {
         initMainView();
         mainPanel.add(toolsPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel, BorderLayout.CENTER);
