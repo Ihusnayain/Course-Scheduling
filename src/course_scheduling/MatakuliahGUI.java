@@ -7,6 +7,9 @@ package course_scheduling;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -24,18 +27,20 @@ public class MatakuliahGUI extends GUI {
 
     public MatakuliahGUI() {
         super();
+        initMainView();
     }
 
     public MatakuliahGUI(String frameTitle) {
         super(frameTitle);
+        initMainView();
     }
 
     public MatakuliahGUI(String frameTitle, int height, int width) {
         super(frameTitle, height, width);
+        initMainView();
     }
 
     public void showMainView() {
-        initMainView();
         mainPanel.add(toolsPanel, BorderLayout.NORTH);
         mainPanel.add(tablePanel, BorderLayout.CENTER);
         platform.add(mainPanel);
@@ -59,5 +64,13 @@ public class MatakuliahGUI extends GUI {
         this.setDataTable(row, column);
         tablePanel = new JScrollPane(this.getDataTable());
     }
-
+    
+    public void addListener(ActionListener listener, MouseListener mouselisten, KeyListener keylisten){
+        this.getBtnAdd().addActionListener(listener);
+        this.getBtnEdit().addActionListener(listener);
+        this.getBtnDelete().addActionListener(listener);
+        this.getDataTable().addMouseListener(mouselisten);
+        this.getDataTable().addKeyListener(keylisten);
+        btnBack.addActionListener(listener);
+    }
 }

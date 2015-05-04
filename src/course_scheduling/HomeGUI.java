@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -24,18 +25,20 @@ public class HomeGUI extends GUI {
 
     public HomeGUI() {
         super();
+        initMainView();
     }
 
     public HomeGUI(String frameTitle) {
         super(frameTitle);
+        initMainView();
     }
 
     public HomeGUI(String frameTitle, int height, int width) {
         super(frameTitle, height, width);
+        initMainView();
     }
 
     public void showMainView() {
-        initMainView();
         mainPanel.add(greetPanel, BorderLayout.NORTH);
         mainPanel.add(toolsPanel, BorderLayout.CENTER);
         platform.add(mainPanel);
@@ -56,6 +59,16 @@ public class HomeGUI extends GUI {
         for (int i = 0; i < listButton.length; i++) {
             listButton[i] = new JButton(btnTitle[i]);
             toolsPanel.add(listButton[i]);
+        }
+    }
+    
+    public void addListener(ActionListener listener)
+    {
+
+        String[] btnTitle = {"Matakuliah", "Dosen", "Kelas", "Jadwal", "Ruangan", "Keluar"};
+
+        for (int i = 0; i < listButton.length; i++) {
+            listButton[i].addActionListener(listener);
         }
     }
 

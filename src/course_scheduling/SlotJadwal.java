@@ -60,7 +60,7 @@ public class SlotJadwal {
         String out = "=== Hari" + hari + " === \n";
         for (int i = 0; i < nShift; i++) {
             if (shift[i].getJadwal() != null) {
-                out += "Shift " + i + " : " + shift[i].getJadwal().getMatakuliah().getNamaMK() + "\n";
+//                out += "Shift " + i + " : " + shift[i].getJadwal().getMatakuliah().getNamaMK() + "\n";
             }
         }
         out += "\n";

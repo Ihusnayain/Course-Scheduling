@@ -1,5 +1,7 @@
 package course_scheduling;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -122,5 +124,6 @@ public class GUI extends JFrame {
     public JTable getDataTable() {
         return dataTable;
     }
+
 
 }
